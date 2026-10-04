@@ -352,23 +352,31 @@ results/figures/
 
 ---
 
-## 📚 Reference
+## 📚 References
 
-Banerjee, A., Chandrasekhar, A. G., Duflo, E., & Jackson, M. O. (2013).
+**[1]** A. Banerjee, A. G. Chandrasekhar, E. Duflo, M. O. Jackson,
+*The diffusion of microfinance*, **Science**, 341(6144), 2013, 1236498.
+DOI: `10.1126/science.1236498`
 
-**The Diffusion of Microfinance.**
-*Science, 341(6144).*
+**[2]** C. Kang, S. Kraus, C. Molinaro, F. Spezzano, V. S. Subrahmanian,
+*Diffusion centrality: A paradigm to maximize spread in social networks*, **Artificial Intelligence**, 239, 2016, 70–96.
+DOI: `10.1016/j.artint.2016.07.003`
+
+**[3]** P. Bonacich,
+*Power and centrality: A family of measures*, **American Journal of Sociology**, 92(5), 1987, 1170–1182.
+DOI: `10.1086/228631`
+
+**[4]** S. Brin, L. Page,
+*The anatomy of a large-scale hypertextual Web search engine*, **Computer Networks and ISDN Systems**, 30(1–7), 1998, 107–117.
+DOI: `10.1016/S0169-7552(98)00110-X`
+
+**[5]** L. C. Freeman,
+*Centrality in social networks: Conceptual clarification*, **Social Networks**, 1(3), 1978, 215–239.
+DOI: `10.1016/0378-8733(78)90021-7`
+
+**[6]** W. W. Zachary,
+*An information flow model for conflict and fission in small groups*, **Journal of Anthropological Research**, 33(4), 1977, 452–473.
+DOI: `10.1086/jar.33.4.3629752`
 
 ---
 
-## 👨‍💻 Author
-
-**Divya Shakti**
-Department of Computer Science
-University of Delhi
-
----
-
-<p align="center">
-  ⭐ If you found this project useful, consider starring the repository.
-</p>
