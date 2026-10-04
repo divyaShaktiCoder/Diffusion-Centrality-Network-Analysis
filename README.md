@@ -1,3 +1,21 @@
+# Diffusion Centrality: Network Analysis
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![NetworkX](https://img.shields.io/badge/NetworkX-Network%20Analysis-orange.svg)](https://networkx.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-blue.svg)](https://numpy.org/)
+[![SciPy](https://img.shields.io/badge/SciPy-Scientific%20Computing-green.svg)](https://scipy.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red.svg)](https://matplotlib.org/)
+
+Implementation and experimental analysis of **Diffusion Centrality** for multiple real-world network datasets.
+
+---
+
+
+# Diffusion-Centrality-Network-Analysis
+
+![GitHub stars](https://img.shields.io/github/stars/divyaShaktiCoder/Diffusion-Centrality-Network-Analysis?style=for-the-badge&logo=github) ![GitHub forks](https://img.shields.io/github/forks/divyaShaktiCoder/Diffusion-Centrality-Network-Analysis?style=for-the-badge&logo=github) ![GitHub issues](https://img.shields.io/github/issues/divyaShaktiCoder/Diffusion-Centrality-Network-Analysis?style=for-the-badge&logo=github) ![Last commit](https://img.shields.io/github/last-commit/divyaShaktiCoder/Diffusion-Centrality-Network-Analysis?style=for-the-badge&logo=github)
+
+
 # Diffusion Centrality
 
 ---
