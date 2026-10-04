@@ -1,46 +1,33 @@
-# Diffusion Centrality — Network Science
+Diffusion Centrality
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/NetworkX-Analysis-orange?style=flat-square"> <img src="https://img.shields.io/badge/NumPy-Matrix%20Operations-013243?style=flat-square&logo=numpy"> <img src="https://img.shields.io/badge/SciPy-Scientific%20Computing-8CAAE6?style=flat-square&logo=scipy"> <img src="https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square"> </p> <p align="center"> A simple implementation of <b>Diffusion Centrality</b> for identifying important nodes in complex networks. </p> <p align="center"> <a href="#overview">Overview</a> • <a href="#method">Method</a> • <a href="#datasets">Datasets</a> • <a href="#results">Results</a> • <a href="#usage">Usage</a> </p>
+Overview
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/NetworkX-Network%20Analysis-orange" alt="NetworkX">
-  <img src="https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy" alt="NumPy">
-  <img src="https://img.shields.io/badge/SciPy-Scientific%20Computing-8CAAE6?logo=scipy" alt="SciPy">
-  <img src="https://img.shields.io/badge/Matplotlib-Visualization-11557c?logo=matplotlib" alt="Matplotlib">
-  <img src="https://img.shields.io/badge/Google%20Colab-Notebook-F9AB00?logo=googlecolab" alt="Google Colab">
-  <img src="https://img.shields.io/badge/Network%20Science-Research-purple" alt="Network Science">
-</p>
+Diffusion Centrality measures the importance of a node by considering how influence can spread through a network over multiple steps.
 
-<p align="center">
-  <strong>Implementation and Experimental Analysis of Diffusion Centrality Across Multiple Network Datasets</strong>
-</p>
-🌐 Diffusion Centrality
-Simple Network Analysis with Python
-<p align="center"> <b>Measure node importance through network diffusion.</b><br> Analyze multiple real-world networks and visualize the most influential nodes. </p> <p align="center">
+This project calculates Diffusion Centrality for several network datasets, ranks the nodes, and generates visualizations of the 10 most central nodes.
 
+Pipeline
+Network
+   │
+   ▼
+Adjacency Matrix
+   │
+   ▼
+Largest Eigenvalue
+   │
+   ▼
+Diffusion Parameter q
+   │
+   ▼
+Diffusion Centrality
+   │
+   ├──────────────► Top 5 Nodes
+   │
+   └──────────────► Top 10 Visualization
 
+Method
 
-
-
-
-
-</p>
-✨ What is this?
-
-Diffusion Centrality measures how important a node is based on how effectively information, influence, or connections can spread through a network.
-
-This project provides a simple Python implementation that calculates Diffusion Centrality and identifies the most important nodes in different networks.
-
-The program automatically:
-
-📥 Loads network datasets
-→ 🧮 Calculates Diffusion Centrality
-→ 🏆 Finds the Top 5 nodes
-→ 📊 Creates a Top 10 visualization
-→ 💾 Saves the results as PNG images
-
-🧠 How it works
-
-The implementation uses:
+The implementation follows:
 
 𝐷
 𝐶
@@ -57,201 +44,150 @@ The implementation uses:
 𝑙
 1
 
-Where:
+where:
 
-Symbol	Meaning
-A	Adjacency matrix
-q	Inverse of the largest eigenvalue
-T	Number of diffusion steps
-DC	Diffusion Centrality
-⚙️ Current setting
+$A$ is the adjacency matrix
+
+$q$ is the inverse of the largest eigenvalue of $A$
+
+$T$ is the number of diffusion steps
+
+$\mathbf{1}$ is an all-ones vector
+
+For this project:
+
 T = 3
 
 
-The algorithm considers paths up to 3 diffusion steps through the network.
+The largest eigenvalue is calculated automatically for each network.
 
-📊 Networks
+Datasets
+Dataset	Nodes	Network
+Karate	34	Undirected
+Dolphins	—	Undirected
+Football	—	Undirected
+PolBooks	—	Undirected
+Reachability	—	Weighted / Directed
 
-This project analyzes 5 different network datasets:
+The datasets are stored as .edgelist files and loaded automatically by the program.
 
-🗂️ Dataset	🔗 Network Type
-🥋 Karate	Undirected
-🐬 Dolphins	Undirected
-🏈 Football	Undirected
-📚 PolBooks	Undirected
-🌐 Reachability	Weighted + Directed
-🚀 Getting Started
-1️⃣ Open Google Colab
+Results
 
-Upload:
+The program produces two types of results:
+
+Ranking
+
+Top 5 Nodes
+───────────────
+1. Node   Score
+2. Node   Score
+3. Node   Score
+4. Node   Score
+5. Node   Score
+
+
+Visualization
+
+Each dataset produces a horizontal bar chart containing the Top 10 nodes ranked by Diffusion Centrality.
+
+Karate
+<p align="center"> <img src="figures_simple/karate_top10.png" width="750"> </p>
+Dolphins
+<p align="center"> <img src="figures_simple/dolphins_top10.png" width="750"> </p>
+Football
+<p align="center"> <img src="figures_simple/football_top10.png" width="750"> </p>
+PolBooks
+<p align="center"> <img src="figures_simple/polbooks_top10.png" width="750"> </p>
+Reachability
+<p align="center"> <img src="figures_simple/reachability_top10.png" width="750"> </p>
+Usage
+Google Colab
+
+The project is designed to run directly in Google Colab.
+
+Place the project in:
+
+Google Drive
+└── MyDrive
+    └── Dataset-NetworkScience
+
+
+Then run:
 
 diffusion_centrality_simple.py
 
-2️⃣ Add the project to Google Drive
 
-The expected location is:
+The script automatically:
 
-MyDrive/
-└── Dataset-NetworkScience/
+Mounts Google Drive
 
+Loads the datasets
 
-The program automatically mounts Google Drive and copies the project into Colab.
+Calculates Diffusion Centrality
 
-3️⃣ Run the program
+Prints the Top 5 nodes
 
-That's it.
+Generates Top 10 charts
 
-The program processes all available datasets automatically.
+Saves the charts in figures_simple/
 
-🏆 Output
+Installation
 
-For every dataset, the program displays:
+For local execution:
 
-Top 5 Nodes
-DATASET: karate
-
-Nodes : 34
-Edges : 78
-T     : 3
-
-Top 5 Nodes by Diffusion Centrality
-
-Rank   Node          Score
---------------------------------
-1      ...           ...
-2      ...           ...
-3      ...           ...
-4      ...           ...
-5      ...           ...
+pip install numpy networkx scipy matplotlib
 
 
-It also creates a Top 10 bar chart.
+Then run:
 
-📈 Visual Results
+python diffusion_centrality_simple.py
 
-Place the generated charts inside:
-
-figures_simple/
-
-
-Then they can be displayed directly in GitHub.
-
-🥋 Karate
-
-🐬 Dolphins
-
-🏈 Football
-
-📚 PolBooks
-
-🌐 Reachability
-
-📁 Project Structure
+Project Structure
 Dataset-NetworkScience/
 │
-├── 📄 diffusion_centrality_simple.py
+├── diffusion_centrality_simple.py
 │
-├── 📊 karate.edgelist
-├── 📊 dolphins.edgelist
-├── 📊 football.edgelist
-├── 📊 polbooks.edgelist
-├── 📊 reachability.edgelist
+├── karate.edgelist
+├── dolphins.edgelist
+├── football.edgelist
+├── polbooks.edgelist
+├── reachability.edgelist
 │
-└── 📁 figures_simple/
-    ├── 🖼️ karate_top10.png
-    ├── 🖼️ dolphins_top10.png
-    ├── 🖼️ football_top10.png
-    ├── 🖼️ polbooks_top10.png
-    └── 🖼️ reachability_top10.png
+└── figures_simple/
+    ├── karate_top10.png
+    ├── dolphins_top10.png
+    ├── football_top10.png
+    ├── polbooks_top10.png
+    └── reachability_top10.png
 
-🛠️ Built With
-Technology	Purpose
-🐍 Python	Main programming language
-🔗 NetworkX	Network analysis
-🔢 NumPy	Matrix calculations
-⚡ SciPy	Eigenvalue calculation
-📊 Matplotlib	Data visualization
-☁️ Google Colab	Execution environment
-📦 Installation
+Requirements
+Python 3.x
+NumPy
+NetworkX
+SciPy
+Matplotlib
 
-If running locally:
+Why Diffusion Centrality?
 
-pip install numpy networkx matplotlib scipy
+Unlike measures based only on immediate connections, Diffusion Centrality considers paths across multiple steps.
 
-
-Or simply run the project in Google Colab.
-
-🎯 Project Goal
-
-The main goal is to provide a clear and easy-to-understand implementation of Diffusion Centrality.
-
-Instead of only producing numerical values, this project also provides visualizations that make it easier to identify and compare the most important nodes.
-
-💡 Why Diffusion Centrality?
-
-Traditional centrality measures often focus on immediate connections.
-
-Diffusion Centrality considers multiple steps of network diffusion.
-
-In simple terms:
-
-        Node
-         │
-    ┌────┴────┐
-    ▼         ▼
- Neighbor   Neighbor
-    │         │
-    ▼         ▼
-  Next      Next
-  Layer     Layer
-
-
-This allows the method to capture the broader reach of a node within a network.
-
-📌 Key Features
-
-✅ Simple implementation
-
-✅ Multiple network datasets
-
-✅ Directed network support
-
-✅ Weighted network support
-
-✅ Automatic eigenvalue calculation
-
-✅ Top 5 node ranking
-
-✅ Top 10 visualization
-
-✅ PNG output
-
-✅ Google Colab compatible
-
-⭐ Summary
-
-Input
-
-Network Dataset
-      ↓
-
-
-Processing
-
-Adjacency Matrix
-      ↓
-Largest Eigenvalue
-      ↓
-Calculate q
-      ↓
-Diffusion Centrality
-      ↓
-
+This makes it useful for studying networks where influence, information, or interaction can propagate beyond a node's direct neighbors.
 
 Output
 
-🏆 Top 5 Nodes
-      +
-📊 Top 10 Chart
+For each dataset:
 
-<p align="center"> <b>🌐 Diffusion Centrality</b><br> Network Analysis • Node Importance • Data Visualization </p>
+Dataset
+   │
+   ├── Network statistics
+   │
+   ├── Top 5 nodes
+   │
+   └── Top 10 Diffusion Centrality chart
+
+
+Charts are saved automatically as:
+
+figures_simple/<dataset>_top10.png
+
+<p align="center"> <sub>Network Analysis • Diffusion Centrality • Python</sub> </p>
